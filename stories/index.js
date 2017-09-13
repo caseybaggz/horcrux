@@ -6,6 +6,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 require("./Alert");
+require("./Breadcrumb");
 require("./Button");
 require("./Code");
 require("./Image");
