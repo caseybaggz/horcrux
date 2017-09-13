@@ -4,12 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+import { DotLoader } from "../src";
 
-require("./Alert");
-require("./Breadcrumb");
-require("./Button");
-require("./Code");
-require("./DotLoader");
-require("./Image");
-require("./Pill");
-require("./Table");
+const StoryDotLoader = storiesOf("DotLoader", module).add("default", () => (
+  <DotLoader />
+));
+
+export default StoryDotLoader;
