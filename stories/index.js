@@ -9,4 +9,5 @@ require("./Alert");
 require("./Button");
 require("./Code");
 require("./Image");
+require("./Pill");
 require("./Table");
