@@ -1,6 +1,7 @@
 // @flow
 
 import styled from "styled-components";
+import * as Fonts from "../fonts";
 
 const Button /* : object */ = styled.button`
   appearance: none;
@@ -12,7 +13,6 @@ const Button /* : object */ = styled.button`
   cursor: pointer;
   display: inline-block;
   font-size: 0.9rem;
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica, arial, sans-serif;
   letter-spacing: 0.08rem;
   margin: 0.5em auto;
   min-width: 11.9375rem;
@@ -23,7 +23,6 @@ const Button /* : object */ = styled.button`
   text-align: center;
   text-transform: uppercase;
   transition: background-color 200ms ease-out, color 200ms ease-out;
-  -webkit-font-smoothing: antialiased;
 
   &:hover {
     background-color: transparent;
@@ -33,6 +32,8 @@ const Button /* : object */ = styled.button`
   &:focus {
     outline: none;
   }
+
+  ${Fonts};
 `;
 
 export default Button;
