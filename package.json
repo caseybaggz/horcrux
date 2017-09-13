@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/caseybaggz/horcrux",
   "dependencies": {
+    "animated": "^0.2.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -50,6 +51,7 @@
     "@storybook/react": "^3.2.8",
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",

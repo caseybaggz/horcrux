@@ -4,8 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
+import { Code } from "../src";
 
-require("./Button");
-require("./Code");
-require("./Image");
-require("./Table");
+const StoryCode = storiesOf("Code", module).add("default", () => (
+  <Code>sample code</Code>
+));
+
+export default StoryCode;
