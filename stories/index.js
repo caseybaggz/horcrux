@@ -11,5 +11,6 @@ require("./Button");
 require("./Code");
 require("./DotLoader");
 require("./Image");
+require("./Input");
 require("./Pill");
 require("./Table");
