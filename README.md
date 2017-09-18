@@ -5,8 +5,8 @@
 Perfect for Buttons, Inputs, or any other UI related component you want to add into your React app. Easy to extend, style, and integrate into your project (React-Native compatability coming soon!).
 
 ## Contents
-* [User Guide]()
-* [Docs]()
+* [User Guide (summoning very soon)]()
+* [Docs (summoning very soon)]()
 
 ## Installation
 yarn:
