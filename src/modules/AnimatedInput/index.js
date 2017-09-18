@@ -97,6 +97,25 @@ const Input /* : object */ = styled.input`
   ${Fonts};
 `;
 
+const PasswordBtn /* : object */ = styled.span`
+  bottom: 0.8rem;
+  box-sizing: border-box;
+  display: inline-block;
+  color: #808091;
+  cursor: pointer;
+  font-size: 0.7rem;
+  height: 1rem;
+  letter-spacing: 0.03rem;
+  padding-left: 1rem;
+  position: absolute;
+  right: 2rem;
+  text-align: right;
+  text-transform: capitalize;
+  transition: opacity 150ms ease-out;
+  width: 3.125rem;
+  ${Fonts} z-index: 20;
+`;
+
 export default class AnimatedInput extends Component<Props, State> {
   static propTypes = {
     barColor: PropTypes.string,
@@ -110,44 +129,39 @@ export default class AnimatedInput extends Component<Props, State> {
 
   state = {
     active: false,
-    passVisibility: false
+    passVisibility: false,
+    inputType: this.props.type || "text"
   };
 
   // PRIVATE
 
   _getPasswordBtn = () => {
-    // const { active, passVisibility } = this.state;
-    // const { type } = this.props;
-    // const BtnClass = classnames('AnimatedInput-toggle-value-btn', { active, show: passVisibility });
-    // const BtnText  = passVisibility ? 'hide' : 'show';
-    //
-    // if (type === 'password') {
-    //   return(
-    //     <span
-    //       className={ BtnClass }
-    //       onClick={ this._toggleVisibility }
-    //     >
-    //       { BtnText }
-    //     </span>
-    //   );
-    // }
+    const { active, passVisibility } = this.state;
+    const { type } = this.props;
+    const BtnText = passVisibility ? "hide" : "show";
 
-    return null;
+    if (type !== "password") {
+      return;
+    }
+
+    return (
+      <PasswordBtn onClick={this._toggleVisibility}>{BtnText}</PasswordBtn>
+    );
   };
 
   _toggleInputType = () => {
-    // const currentType = this.input.type;
-    //
-    // switch (currentType) {
-    //   case 'password':
-    //     this.input.type = 'text';
-    //     break;
-    //   case 'text':
-    //     this.input.type = 'password';
-    //     break;
-    //   default:
-    //     return;
-    // }
+    const currentType = this.input.props.type;
+
+    switch (currentType) {
+      case "password":
+        this._updateInputType("text");
+        break;
+      case "text":
+        this._updateInputType("password");
+        break;
+      default:
+        return;
+    }
   };
 
   _toggleVisibility = () => {
@@ -162,13 +176,15 @@ export default class AnimatedInput extends Component<Props, State> {
   };
 
   _updateClass = active => {
-    this.setState({
-      active
-    });
+    this.setState({ active });
+  };
+
+  _updateInputType = inputType => {
+    this.setState({ inputType });
   };
 
   render() {
-    const { active } = this.state;
+    const { active, inputType } = this.state;
     const { barColor, inputLabel, ...rest } = this.props;
     const passwordBtn = this._getPasswordBtn();
 
@@ -181,8 +197,8 @@ export default class AnimatedInput extends Component<Props, State> {
             {...rest}
             ref={el => (this.input = el)}
             placeholder=""
-            onBlur={() => this._updateClass(false)}
             onFocus={() => this._updateClass(true)}
+            type={inputType}
           />
 
           {passwordBtn}
