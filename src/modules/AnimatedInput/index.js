@@ -6,6 +6,7 @@ import styled from "styled-components";
 import * as Fonts from "../fonts";
 
 type Props /* : object */ = {
+  barColor: string,
   inputLabel: string
 };
 
@@ -29,12 +30,13 @@ const Label /* : object */ = styled.label`
   bottom: 1rem;
   color: #808091;
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: ${props => (props.active ? "0.875rem" : "1.125rem")};
   letter-spacing: 0.0125rem;
   left: 0;
   position: absolute;
   text-transform: capitalize;
-  transform: translate3d(0, 0, 0);
+  transform: ${props =>
+    props.active ? "translate3d(0, -2.5rem, 0)" : "translate3d(0, 0, 0)"};
   transition: transform 200ms ease-out, font-size 200ms ease-out;
   will-change: transform;
   z-index: 0;
@@ -48,7 +50,8 @@ const InputContainer /* : object */ = styled.div`
   position: relative;
 
   &:before {
-    background-color: transparent;
+    background-color: ${props =>
+      props.active ? props.barColor : "transparent"};
     box-sizing: border-box;
     bottom: 0;
     content: "";
@@ -58,7 +61,7 @@ const InputContainer /* : object */ = styled.div`
     position: absolute;
     right: 0;
     transition: width 200ms ease-out;
-    width: 0;
+    width: ${props => (props.active ? "100%" : 0)};
     will-change: width;
     z-index: 15;
   }
@@ -96,10 +99,12 @@ const Input /* : object */ = styled.input`
 
 export default class AnimatedInput extends Component<Props, State> {
   static propTypes = {
+    barColor: PropTypes.string,
     inputLabel: PropTypes.string
   };
 
   static defaultProps = {
+    barColor: "#000",
     inputLabel: ""
   };
 
@@ -156,27 +161,29 @@ export default class AnimatedInput extends Component<Props, State> {
     );
   };
 
-  _updateClass = () => {
-    const { active } = this.state;
-
-    if (!!active) {
-      return;
-    } else {
-      this.setState({ active: true });
-    }
+  _updateClass = active => {
+    this.setState({
+      active
+    });
   };
 
   render() {
     const { active } = this.state;
-    const { inputLabel, ...rest } = this.props;
+    const { barColor, inputLabel, ...rest } = this.props;
     const passwordBtn = this._getPasswordBtn();
 
     return (
       <InputWrapper>
-        <Label>{inputLabel}</Label>
+        <Label active={active}>{inputLabel}</Label>
 
-        <InputContainer>
-          <Input {...rest} ref={el => (this.input = el)} placeholder="" />
+        <InputContainer active={active} barColor={barColor}>
+          <Input
+            {...rest}
+            ref={el => (this.input = el)}
+            placeholder=""
+            onBlur={() => this._updateClass(false)}
+            onFocus={() => this._updateClass(true)}
+          />
 
           {passwordBtn}
         </InputContainer>

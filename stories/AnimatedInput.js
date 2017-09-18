@@ -31,6 +31,7 @@ const StoryButton = storiesOf("AnimatedInput", module)
   ))
   .add("password", () => (
     <AnimatedInput
+      barColor="lightGrey"
       inputLabel="password"
       onChange={action("changed")}
       placeholder="test"
