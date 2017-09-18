@@ -1,12 +1,12 @@
 {
   "name": "react-horcrux",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "React web UI Library",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src/ --out-dir dist/",
     "precommit": "lint-staged",
-    "prepublish": "yarn run build",
+    "prepare": "yarn run build",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "NODE_PATH=./src jest"
   },
