@@ -6,9 +6,12 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
 require("./Alert");
+require("./AnimatedInput");
 require("./Breadcrumb");
 require("./Button");
 require("./Code");
+require("./DotLoader");
 require("./Image");
+require("./Input");
 require("./Pill");
 require("./Table");
