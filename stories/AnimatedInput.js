@@ -6,18 +6,6 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { AnimatedInput } from "../src";
 
-// const NewButton = AnimatedInput.extend`
-//   background-color: transparent;
-//   border: 2px solid tomato;
-//   color: tomato;
-//   font-weight: 600;
-//
-//   &:hover {
-//     background-color: tomato;
-//     color: #fff;
-//   }
-// `;
-
 const StoryButton = storiesOf("AnimatedInput", module)
   .add("default", () => (
     <AnimatedInput
