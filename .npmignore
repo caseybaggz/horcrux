@@ -1,0 +1,15 @@
+*.log
+
+# Dependency dir
+node_modules
+
+# Development
+__tests__
+stories
+
+# misc
+.storybook
+.babelrc
+.eslintrc.json
+.travis.yml
+.flowconfig
