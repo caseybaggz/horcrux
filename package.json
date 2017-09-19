@@ -8,6 +8,7 @@
     "precommit": "lint-staged",
     "prepare": "yarn run build",
     "storybook": "start-storybook -p 9001 -c .storybook",
+    "deploy-storybook": "storybook-to-ghpages",
     "test": "NODE_PATH=./src jest"
   },
   "repository": {
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "@storybook/react": "^3.2.8",
+    "@storybook/storybook-deployer": "^2.0.0",
     "babel-cli": "^6.26.0",
     "babel-jest": "^21.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
