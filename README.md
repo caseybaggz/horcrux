@@ -5,8 +5,8 @@
 Perfect for Buttons, Inputs, or any other UI related component you want to add into your React app. Easy to extend, style, and integrate into your project (React-Native compatability coming soon!).
 
 ## Contents
-* [User Guide (summoning very soon)]()
-* [Docs (summoning very soon)]()
+* [User Guide & Docs](https://caseybaggz.gitbooks.io/horcrux/content/)
+* [All demos](https://caseybaggz.github.io/horcrux/?selectedKind=Alert&selectedStory=default&full=0&down=1&left=1&panelRight=0&downPanel=storybook%2Factions%2Factions-panel)
 
 ## Installation
 yarn:
