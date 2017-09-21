@@ -13,7 +13,7 @@ const props = {
 };
 
 const StoryImage = storiesOf("Image", module).add("default", () => (
-  <div>
+  <div style={{ maxWidth: "20rem" }}>
     <Image {...props} />
     <p>This component fades the image in after the browser loads it</p>
   </div>

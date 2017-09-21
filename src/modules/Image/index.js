@@ -5,7 +5,9 @@ import * as Animated from "animated/lib/targets/react-dom";
 import styled from "styled-components";
 
 const ImageWrapper /* : object */ = styled.div`
-  background-color: #f7f7f9 img {
+  background-color: #f7f7f9;
+
+  img {
     display: inline-block;
     width: 100%;
   }
