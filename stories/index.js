@@ -9,6 +9,7 @@ require("./Alert");
 require("./AnimatedInput");
 require("./Breadcrumb");
 require("./Button");
+require("./Checkbox");
 require("./Code");
 require("./DotLoader");
 require("./Image");

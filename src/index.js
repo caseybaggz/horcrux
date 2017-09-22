@@ -2,6 +2,7 @@ export { default as Alert } from "./modules/Alert";
 export { default as AnimatedInput } from "./modules/AnimatedInput";
 export { default as Button } from "./modules/Button";
 export { default as Breadcrumb } from "./modules/Breadcrumb";
+export { default as Checkbox } from "./modules/Checkbox";
 export { default as Code } from "./modules/Code";
 export { default as DotLoader } from "./modules/DotLoader";
 export { default as Image } from "./modules/Image";
