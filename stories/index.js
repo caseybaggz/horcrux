@@ -16,3 +16,4 @@ require("./Image");
 require("./Input");
 require("./Pill");
 require("./Table");
+require("./Toggle");
