@@ -69,12 +69,10 @@ export default NewButton function({...props}) {
 ## Upcoming Spells
 We are in the official beginning stages of this library, but to give you a sneak peak on what is to come, here are our list of TODO's to incorporate ASAP:
 
-* Checkbox
 * Dropdown
 * Datepicker
 * Modal
 * Tabview (headers with an animating bar that switches content to be displayed)
-* Toggle
 * Selectbox
 * Textarea
 

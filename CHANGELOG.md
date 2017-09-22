@@ -1,5 +1,16 @@
+## v1.0.4
+New Components!
+
+* Checkbox
+* Toggle (animating button similar to iOS Toggle)
+
+Upgrading:
+```
+yarn upgrade react-horcrux --latest
+```
+
 ## v1.0.3
-Small patches here and there. 
+Small patches here and there.
 Most notable fix is a bugfix to the `<Image />` component regarding styling.
 
 Upgrading:
