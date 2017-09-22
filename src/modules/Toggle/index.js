@@ -32,9 +32,11 @@ export default class Toggle extends Component<Props, State> {
   };
 
   componentWillReceiveProps(nextProps: object) {
-    this.setState({
-      active: nextProps.active
-    });
+    const { active } = nextProps;
+
+    if (this.state.active !== active) {
+      this.setState({ active });
+    }
   }
 
   // PRIVATE

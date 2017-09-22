@@ -6,8 +6,8 @@ import { Toggle } from "../src";
 describe("<Toggle />", () => {
   const props = {
     active: true,
-    readOnly: false,
-    toggleRef: jest.fn()
+    callback: jest.fn(),
+    readOnly: false
   };
 
   const _Toggle = <Toggle />;
@@ -76,4 +76,35 @@ describe("<Toggle />", () => {
   });
 
   // COMPONENT
+
+  it("should update the state when called", () => {
+    const func = wrapper.instance()._updateState;
+
+    expect(func).not.toBeNull();
+    expect(func).toBeDefined();
+    expect(() => func()).not.toThrow();
+
+    wrapper.setState({ active: false });
+    setTimeout(() => {
+      func();
+      expect(wrapper.state().active).not.toEqual(false);
+      expect(wrapper.state().active).toEqual(true);
+      expect(props.callback).toHaveBeenCalled();
+      expect(props.callback).toHaveBeenCalledTimes(1);
+      expect(props.callback).toHaveBeenCalledWith(wrapper.state().active);
+    }, 400);
+  });
+
+  it("should update the state when clicked", () => {
+    const el = wrapper.find("input");
+
+    el.simulate("click");
+    setTimeout(() => {
+      expect(wrapper.state().active).not.toEqual(false);
+      expect(wrapper.state().active).toEqual(true);
+      expect(props.callback).toHaveBeenCalled();
+      expect(props.callback).toHaveBeenCalledTimes(2);
+      expect(props.callback).toHaveBeenCalledWith(wrapper.state().active);
+    }, 400);
+  });
 });
