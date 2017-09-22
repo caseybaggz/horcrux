@@ -1,3 +1,13 @@
+## v1.0.3
+Small patches here and there. 
+Most notable fix is a bugfix to the `<Image />` component regarding styling.
+
+Upgrading:
+```
+yarn upgrade react-horcrux --latest
+```
+
+
 ## v1.0.1
 Horcrux is born! As of now you can utilize these components (api coming soon):
 
