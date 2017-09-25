@@ -11,7 +11,7 @@ const SelectBoxListLi /* : object */ = styled.div`
   margin-left: 0.625rem;
   margin-right: 1.9375rem;
   padding-bottom: 0.75rem;
-  padding-top: 1.625rem;
+  padding-top: 0.75rem;
   text-transform: capitalize;
   transition: border 150ms ease-out, color 150ms ease-out;
 

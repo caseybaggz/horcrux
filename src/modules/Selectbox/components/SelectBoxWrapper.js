@@ -16,6 +16,7 @@ const SelectBoxWrapper /* : object */ = styled.div`
 
   &::after {
     background-color: black;
+    box-sizing: border-box;
     content: "";
     height: 0.4rem;
     position: absolute;
@@ -25,8 +26,9 @@ const SelectBoxWrapper /* : object */ = styled.div`
   }
 
   &:hover {
-    border: 1px solid #8071fe;
-    box-shadow: 0 1px 3px 0 rgba(128, 113, 254, 0.2);
+    border: 1px solid ${props => (props.open ? "transparent" : "#8071fe")};
+    box-shadow: ${props =>
+      props.open ? "none" : "0 1px 3px 0 rgba(128, 113, 254, 0.2)"};
   }
 `;
 
