@@ -4,22 +4,64 @@ import { mount } from "enzyme";
 import { Selectbox } from "../src";
 
 describe("<Selectbox />", () => {
+  const books = [
+    { name: "LeanUx", value: "0001" },
+    { name: "The Lean Startup", value: "0002" },
+    { name: "Remote: Office Not Required", value: "0003" }
+  ];
+
+  const books2 = [
+    { name: "LeanUx", value: 0 },
+    { name: "The Lean Startup", value: 1 },
+    { name: "Remote: Office Not Required", value: 2 }
+  ];
+
+  const bookList = books.map((book, i) => (
+    <div key={`book-${i}`} value={book.value}>
+      {book.name}
+    </div>
+  ));
+
+  const bookList2 = books2.map((book, i) => (
+    <div key={`book-${i}`} value={book.value}>
+      {book.name}
+    </div>
+  ));
+
+  const badBookList = books.map((book, i) => (
+    <div key={`book-${i}`}>{book.name}</div>
+  ));
+
   const props = {
     callback: jest.fn(),
-    form: false,
+    form: true,
     label: "test choices",
     value: "one"
   };
 
-  const _Selectbox = <Selectbox />;
+  const controlledProps = {
+    callback: jest.fn(),
+    form: true,
+    label: "test label",
+    name: "test name",
+    value: "0002"
+  };
+
+  const _Selectbox = <Selectbox>{bookList}</Selectbox>;
+
   const defaultWrapper = mount(_Selectbox);
-  const wrapper = mount(
-    <Selectbox {...props}>
-      <p value="one">test one</p>
-      <p value="two">test two</p>
-      <p value="three">test three</p>
-    </Selectbox>
+
+  const noChildrenWrapper = mount(<Selectbox {...props}>{[]}</Selectbox>);
+
+  const controlledWrapper = mount(
+    <Selectbox {...controlledProps}>{bookList}</Selectbox>
   );
+
+  const numWrapper = mount(<Selectbox {...props}>{bookList2}</Selectbox>);
+
+  const badWrapper = mount(<Selectbox {...props}>{badBookList}</Selectbox>);
+
+  const wrapper = mount(<Selectbox {...props}>{bookList}</Selectbox>);
 
   it("renders without crashing", () => {
     const div = document.createElement("div");
@@ -98,8 +140,8 @@ describe("<Selectbox />", () => {
     const state = wrapper.state().selected;
     expect(state).not.toBeNull();
     expect(state).toBeDefined();
-    expect(state).not.toEqual("");
-    expect(state).toEqual("test one");
+    expect(state).not.toEqual("test one");
+    expect(state).toEqual("");
   });
 
   it("should have a default selectedValue state", () => {
@@ -110,4 +152,31 @@ describe("<Selectbox />", () => {
   });
 
   // COMPONENT
+
+  it("should not display the list options in the UI by default", () => {
+    const selector = wrapper.find("li").length;
+    expect(selector).not.toEqual(null);
+    expect(selector).not.toEqual(undefined);
+    expect(selector).not.toEqual(2);
+    expect(selector).toEqual(0);
+  });
+
+  it("should display the label in the UI if given", () => {
+    const defaultSelector = defaultWrapper.find("label").length;
+    const selector = wrapper.find("label");
+    expect(defaultSelector).not.toEqual(1);
+    expect(defaultSelector).toEqual(0);
+    expect(selector.length).not.toEqual(0);
+    expect(selector.length).toEqual(1);
+    expect(selector.text()).not.toEqual("");
+    expect(selector.text()).toEqual("test choices");
+  });
+
+  it("should display a hidden form input if form prop given", () => {
+    const prop = wrapper.find("input").length;
+    expect(prop).not.toEqual(undefined);
+    expect(prop).not.toEqual(null);
+    expect(prop).not.toEqual(0);
+    expect(prop).toEqual(1);
+  });
 });

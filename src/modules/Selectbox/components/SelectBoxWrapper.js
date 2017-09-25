@@ -15,7 +15,6 @@ const SelectBoxWrapper /* : object */ = styled.div`
   width: 28.125rem;
 
   &::after {
-    background-color: black;
     box-sizing: border-box;
     content: "";
     height: 0.4rem;
