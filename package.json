@@ -29,7 +29,8 @@
     "babel",
     "react",
     "web",
-    "enzyme"
+    "enzyme",
+    "styled-components"
   ],
   "author": {
     "name": "Casey Baggz",

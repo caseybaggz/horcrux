@@ -8,5 +8,7 @@ export { default as DotLoader } from "./modules/DotLoader";
 export { default as Image } from "./modules/Image";
 export { default as Input } from "./modules/Input";
 export { default as Pill } from "./modules/Pill";
+export { default as Selectbox } from "./modules/Selectbox";
 export { default as Table } from "./modules/Table";
+export { default as Textarea } from "./modules/Textarea";
 export { default as Toggle } from "./modules/Toggle";

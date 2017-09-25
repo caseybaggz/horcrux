@@ -73,8 +73,6 @@ We are in the official beginning stages of this library, but to give you a sneak
 * Datepicker
 * Modal
 * Tabview (headers with an animating bar that switches content to be displayed)
-* Selectbox
-* Textarea
 
 If there is anything else you would like added, feel free to let us know or submit a PR!
 

@@ -15,5 +15,7 @@ require("./DotLoader");
 require("./Image");
 require("./Input");
 require("./Pill");
+require("./Selectbox");
 require("./Table");
+require("./Textarea");
 require("./Toggle");
