@@ -1,3 +1,14 @@
+## v1.0.5
+New Components!
+
+* Textarea
+* Selectbox
+
+Upgrading:
+```
+yarn upgrade react-horcrux --latest
+```
+
 ## v1.0.4
 New Components!
 
