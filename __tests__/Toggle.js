@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { mount } from "enzyme";
 import { Toggle } from "../src";
+import '../setupTests';
 
 describe("<Toggle />", () => {
   const props = {

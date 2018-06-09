@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Checkbox } from "../src";
+import '../setupTests';
 
 describe("<Checkbox />", () => {
   it("renders without crashing", () => {

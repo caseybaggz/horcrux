@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Alert } from "../src";
+import '../setupTests';
 
 describe("<Alert />", () => {
   it("renders without crashing", () => {
