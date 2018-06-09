@@ -1,3 +1,11 @@
+## v2.0.0
+Upgrading to React v16!
+
+Upgrading:
+```
+yarn upgrade react-horcrux --latest
+```
+
 ## v1.0.5
 New Components!
 
