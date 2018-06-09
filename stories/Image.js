@@ -6,10 +6,11 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { Image } from "../src";
 
+import HP from '../img/harry-potter.jpg';
+
 const props = {
   alt: "voldemort",
-  src:
-    "https://pbs.twimg.com/profile_images/815729775776006144/omGh4_qQ_400x400.jpg"
+  src: HP
 };
 
 const StoryImage = storiesOf("Image", module).add("default", () => (

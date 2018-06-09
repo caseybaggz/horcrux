@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Breadcrumb } from "../src";
+import '../setupTests';
 
 describe("<Breadcrumb />", () => {
   it("renders without crashing", () => {
